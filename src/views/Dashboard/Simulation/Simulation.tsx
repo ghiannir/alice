@@ -75,7 +75,7 @@ export const Simulation = () => {
   const fetchData = useCallback(() => {
     //const c = await api.getConfig();
     //await updateConfig(c);
-    const data = genData(cnt, sim);
+    const data = genData(sim);
     const fun = () => setCnt(cnt+1);
     const position = genPosition(cnt);
     const wData = genWeather();
@@ -92,7 +92,7 @@ export const Simulation = () => {
   }, [history, updateData, updateHistory, connected]);
 
   useEffect(() => {
-    setTimeout(() => fetchData(), 1000);
+    fetchData();
     setPolling(true);
   }, [fetchData, setPolling]);
   
