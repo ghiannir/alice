@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Nav, NavItem, Button } from 'react-bootstrap';
+import { Nav, NavItem } from 'react-bootstrap';
+import 'bulma/css/bulma.min.css';
+import { Button } from 'react-bulma-components';
 
 import NavbarBrand from './NavbarBrand';
 
@@ -59,7 +61,7 @@ const Header = () => {
         </NavItem>
         <NavItem className="mr-auto">
           {isNotificationsActive() ? null : (
-            <Button className="ml-3" variant="danger" onClick={() => getMessageToken()}>
+            <Button className="button is-light is-small" onClick={() => getMessageToken()}>
               Notifiche
             </Button>
           )}
